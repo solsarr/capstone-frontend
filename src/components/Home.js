@@ -29,7 +29,7 @@ return(
 
     <div className='postWrapper'>
 
-        {post?.map((post, idx)=> {
+        {post?.slice(0).reverse().map((post, idx)=> {
             return (
                 <div className='post' style={{border:'1px solid black'}}>
                     <div className='imageWrap'>
@@ -37,7 +37,7 @@ return(
                     className='image' />
                     </div>
                     <div className='titleWrap'>
-                    <h6 className='title'>{post.title}</h6>
+                    <h5 className='title'>{post.title}</h5>
                     </div>
                     <div className='genreWrap'>
                     <p className='genre'>{post.genre}</p>

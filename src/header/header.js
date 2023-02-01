@@ -8,6 +8,9 @@ export default function Header(){
             <Link to='/'>
                 <img className='logo' src='https://cdn-icons-png.flaticon.com/512/31/31087.png'/> 
             </Link>
+            <Link to='/recommend'>
+            <h3>test</h3>
+            </Link>
         </nav>
     </header>
     )  

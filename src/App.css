@@ -1,3 +1,7 @@
+/* body{
+  display:flex;
+  flex-direction: column;
+} */
 .nav{
   border: 1px solid black;
   background-color: cornflowerblue;
@@ -17,14 +21,32 @@
   min-width: 100%;
   min-height: 100%;
 }
+.titleWrap{
+  text-align: center;
+}
+.genreWrap{
+  text-align: center;
+}
+.summaryWrap{
+  padding-left: 3px;
+  padding-right: 1px;
+}
 .postWrapper{
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 .post{
   width: 60vw;
+  max-width: 60vw;
+  /* width: 60vw; */
+  /* height: 60vh; */
   overflow: auto;
   display:flex;
 flex-direction: column;
 justify-content: center;
+display: block;
+margin:10px
 }
