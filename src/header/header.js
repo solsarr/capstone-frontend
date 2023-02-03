@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { Dropdown } from '../components/Dropdown'
 
 export default function Header(){
 
@@ -14,6 +15,7 @@ export default function Header(){
             <Link to='/crime'>
             <h3>crime</h3>
             </Link>
+         <Dropdown />
         </nav>
     </header>
     )  
