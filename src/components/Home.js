@@ -24,7 +24,7 @@ useEffect(() => {
 
 
 
-return(
+return( 
 
     <div className='postWrapper'>
 
