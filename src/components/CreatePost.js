@@ -113,7 +113,7 @@ return (
         </form>
         </section>
         <div className='post'>
-            <img src={newForm.image} alt={newform.title} className='image'/>
+            <img src={newForm.image} alt={newForm.title} className='image'/>
             <h6>{newForm.title}</h6>
             <p>{newForm.genre}</p>
             <p>{newForm.summary}</p>
