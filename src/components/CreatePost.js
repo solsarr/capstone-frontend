@@ -46,7 +46,7 @@ export default function Create(){
           console.log(err)
         }
       }
-
+ 
 return (
     <div>
     <section className="user-list">
