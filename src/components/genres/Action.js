@@ -22,7 +22,7 @@ export default function Action(){
  
 useEffect(() => { 
     getPost()
-},[]) 
+},[getPost]) 
 console.log(post)
 
 
@@ -39,7 +39,7 @@ console.log(post)
     <div className='post' style={{border:'1px solid black'}}>
     <div className='imageWrap'>
     <img src={filteredPost.image}
-    className='image' />
+    className='image' alt={filteredPost.image} />
     </div>
     <div className='titleWrap'>
     <h5 className='title'>{filteredPost.title}</h5>

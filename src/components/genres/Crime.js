@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 export default function Crime() {
 
@@ -20,7 +20,7 @@ export default function Crime() {
  
 useEffect(() => { 
     getPost()
-},[]) 
+},[getPost]) 
 console.log(post)
 
 
@@ -37,7 +37,7 @@ console.log(post)
     <div className='post' style={{border:'1px solid black'}}>
     <div className='imageWrap'>
     <img src={filteredPost.image}
-    className='image' />
+    className='image' alt={filteredPost.image} />
     </div>
     <div className='titleWrap'>
     <h5 className='title'>{filteredPost.title}</h5>

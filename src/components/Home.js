@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import '../App.css';
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
 
 useEffect(() => {
     getPost()
-}, [])
+}, [getPost])
 
 
 
@@ -34,7 +33,7 @@ return(
                 <div className='post' style={{border:'1px solid black'}}>
                     <div className='imageWrap'>
                     <img src={post.image}
-                    className='image' />
+                    className='image' alt={post.image} />
                     </div>
                     <div className='titleWrap'>
                     <h5 className='title'>{post.title}</h5>

@@ -1,13 +1,9 @@
 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
 import '../App.css'
 
 function Dropdown( ) {
-
-   const navigate = useNavigate()
-
 
    const [open, setOpen] = useState(false);
 

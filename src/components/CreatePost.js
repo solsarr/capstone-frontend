@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+// import { Link } from 'react-router-dom'
 import '../App.css'
 
 export default function Create(){
@@ -114,7 +113,7 @@ return (
         </form>
         </section>
         <div className='post'>
-            <img src={newForm.image} className='image'/>
+            <img src={newForm.image} alt={newform.title} className='image'/>
             <h6>{newForm.title}</h6>
             <p>{newForm.genre}</p>
             <p>{newForm.summary}</p>
