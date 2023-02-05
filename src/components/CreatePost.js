@@ -17,7 +17,15 @@ export default function Create(){
         const userInput = {...newForm}
         userInput[e.target.name] = e.target.value
         setNewForm(userInput)
+        console.log(newForm.genre)
       };
+      const handleGenre = (e) => {
+        const input = {...newForm}
+        input[e.target.name] = e.target.value
+        console.log(e.target.value, 'value')
+        setNewForm(input)
+        console.log('onclick working')
+      }
       const URL = `http://localhost:4000/post`
 
       const handleSubmit = async (e) => {
@@ -66,7 +74,15 @@ return (
         </label>
       </div>
       <div className='genrePost'>
-        <label htmlFor='genre' className='genreLabel'>
+   <label>
+       Genre:
+       <select onChange={handleGenre}>
+           <option name='Action'value="Action">Action</option>
+           <option name='Crime' value="Crime">Crime</option>
+            <option value="3">Three</option> 
+        </select>
+   </label>
+        {/* <label htmlFor='genre' className='genreLabel'>
           Genre
           <input
             type="genre"
@@ -76,7 +92,8 @@ return (
             onChange={handleChange}
             className='genreInput'
           />
-        </label>
+        </label> */}
+        </div>
         <div className='titlePost'>
             <label htmlFor='title' className='titleLabel'>
                 Title 
@@ -104,16 +121,15 @@ return (
             </label>
         </div>
         <br />
-      </div>
       <div className='submitButton'>
-        <input type="Submit" value="Create Post" onChange={handleChange}
+        <input type="Submit" value="Create Post" onClick={handleSubmit}
         className='createPost'
         />
         </div>
         </form>
         </section>
         <div className='post'>
-            <img src={newForm.image} alt={newForm.title} className='image'/>
+            <img src={newForm.image} alt="no image given" className='image'/>
             <h6>{newForm.title}</h6>
             <p>{newForm.genre}</p>
             <p>{newForm.summary}</p>

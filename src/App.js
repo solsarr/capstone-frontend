@@ -5,7 +5,7 @@ import Create from './components/CreatePost'
 import Crime from './components/genres/Crime'
 import Action from './components/genres/Action'
 import { Routes, Route } from "react-router-dom"
-
+import SignUp from './components/SignUp'
  
 function App() {
   return (
@@ -16,6 +16,8 @@ function App() {
     <Route path='/recommend' element={<Create />} />
     <Route  path='/crime' element={<Crime />}/>
     <Route path='/action' element={<Action />}/>
+    <Route path='/signup' element={<SignUp />}/>
+
      </Routes>
     </div>
   );

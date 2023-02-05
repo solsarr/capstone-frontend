@@ -12,9 +12,6 @@ export default function Header(){
             <Link to='/recommend'>
             <h3>test</h3>
             </Link>
-            <Link to='/crime'>
-            <h3>crime</h3>
-            </Link>
          <Dropdown />
         </nav>
     </header>
