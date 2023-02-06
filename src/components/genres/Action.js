@@ -37,8 +37,9 @@ export default function Action() {
                         <p className='genre'>{filteredPost.genre}</p>
                     </div>
                     <div className='summaryWrap'>
-                        <p className='summary'>{filteredPost.summary}</p>
-                    </div>
+                                    <p className='summary'>{filteredPost.summary} </p>
+                                    --recommended by:{filteredPost.owner}
+                                </div>
 
                 </div>
             ))}
