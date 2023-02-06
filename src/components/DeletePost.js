@@ -66,9 +66,9 @@ export default function DeleteImage() {
     }
     if (loaded == true && post.owner == user) {
         return (
-            <>
+            <div className="center">
                 <button onClick={confirm}>DELETE POST</button>
-            </>
+            </div>
         )
     }
 

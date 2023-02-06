@@ -5,7 +5,9 @@ body {
 p {
   text-decoration: none;
 }
-
+input{
+  margin: 3px;
+}
 .nav {
   border: 1px solid black;
   background-color: cornflowerblue;

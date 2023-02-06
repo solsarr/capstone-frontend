@@ -94,9 +94,10 @@ export default function EditImage() {
         return (
             <div>
                 {token ? (
-                    <section className="user-list">
+                    <section className="register">
                         <h2>Edit Post</h2>
                         <button onClick={appear} className='appearBtn'>Cancel Edit</button>
+                        <br/>
                         <form onSubmit={handleSubmit}  >
                             <div className='imagePost'>
                                 <label htmlFor='image' className='imageLabel'>
@@ -109,24 +110,6 @@ export default function EditImage() {
                                         onChange={handleChange}
                                         className='imageInput'
                                     />
-                                </label>
-                            </div>
-                            <div className='genrePost'>
-                                <label>
-                                    Genre:
-                                    <select name='genre' onChange={handleGenre}>
-                                        <option name='option' value='Pick One'>Pick One:
-                                        </option>
-                                        <option name='genre' value='Action'>Action</option>
-                                        <option name='genre' value='Comedy'>Comedy</option>
-                                        <option name='genre' value='Crime'>Crime
-                                        </option>
-                                        <option name='genre' value='Fantasy'>Fantasy</option>
-                                        <option name='genre' value='Horror'>Horror</option>
-                                        <option name='genre' value='Mystery'>Mystery</option>
-                                        <option name='genre' value='Sci-Fi'>Sci-Fi</option>
-                                        <option name='genre' value='Thriller'>Thriller</option>
-                                    </select>
                                 </label>
                             </div>
                             <div className='titlePost'>
@@ -155,11 +138,31 @@ export default function EditImage() {
                                     />
                                 </label>
                             </div>
+                            <div className='genrePost'>
+                                <label>
+                                    Genre:
+                                    <select name='genre' onChange={handleGenre}>
+                                        <option name='option' value='Pick One'>Pick One:
+                                        </option>
+                                        <option name='genre' value='Action'>Action</option>
+                                        <option name='genre' value='Comedy'>Comedy</option>
+                                        <option name='genre' value='Crime'>Crime
+                                        </option>
+                                        <option name='genre' value='Fantasy'>Fantasy</option>
+                                        <option name='genre' value='Horror'>Horror</option>
+                                        <option name='genre' value='Mystery'>Mystery</option>
+                                        <option name='genre' value='Sci-Fi'>Sci-Fi</option>
+                                        <option name='genre' value='Thriller'>Thriller</option>
+                                    </select>
+                                </label>
+                            </div>
                             <br />
+                            <div className="center">
                             <div className='submitButton'>
                                 <input type="Submit" value="Confirm Edit" onClick={handleSubmit}
                                     className='editPost'
                                 />
+                            </div>
                             </div>
                         </form>
                     </section>
