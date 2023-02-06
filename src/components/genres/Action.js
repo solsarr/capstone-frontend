@@ -22,7 +22,7 @@ export default function Action(){
  
 useEffect(() => { 
     getPost()
-},[getPost]) 
+},[]) 
 console.log(post)
 
 

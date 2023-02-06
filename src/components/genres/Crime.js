@@ -20,7 +20,7 @@ export default function Crime() {
  
 useEffect(() => { 
     getPost()
-},[getPost]) 
+},[]) 
 console.log(post)
 
 
