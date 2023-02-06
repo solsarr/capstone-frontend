@@ -33,8 +33,8 @@ useEffect(() => {
 if (confirm == true){
     return (
         <div className='signOut'>
-        <p className='signConfirm'onClick={logOut}>Yes</p>
-        <p onClick={handleClick}>No</p>
+        <p className='signOutConfirm'onClick={logOut}>Yes</p>
+        <p className='signOutCancel'onClick={handleClick}>No</p>
     </div>
     )
 }

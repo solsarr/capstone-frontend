@@ -15,6 +15,66 @@ p{
   align-items: center;
   /* overflow: auto; */
   min-width: 100%;
+  background-color:rgb(109, 8, 29);
+  color:whitesmoke;
+  font-family: 'Poppins', sans-serif;
+}
+.createBtn{
+  font-family: 'Poppins', sans-serif;
+  height:5vh;
+  width:6vw;
+  font-size: 12px;
+}
+.profileBtn{
+  font-family: 'Poppins', sans-serif;
+  height:5vh;
+  width:6vw;
+  font-size: 15px;
+}
+.dropBtn{
+  font-family: 'Poppins', sans-serif;
+  height:5vh;
+  width:6vw;
+  font-size: 15px;
+}
+.profileBtn:hover{
+  height: 5.3vh;
+  background-color: rgb(133, 38, 38);
+}
+.createBtn:hover{
+    height: 5.3vh;
+    background-color: rgb(133, 38, 38);
+}
+.dropBtn:hover{
+height: 5.3vh;
+background-color: rgb(133, 38, 38);
+}
+.signOutTxt{
+margin: 10px;
+color:black;
+font-size: 20px;
+}
+.signOutTxt:hover{
+color:whitesmoke;  
+}
+.signOutConfirm{
+margin:15px;
+color: black;
+font-size: 20px;
+
+}
+.signOutConfirm:hover{
+  color:whitesmoke;
+  text-decoration: underline;
+}
+.signOutCancel{
+  margin:15px;
+  color: black;
+  font-size: 20px;
+}
+.signOutCancel:hover{
+  color:whitesmoke;
+  text-decoration: underline;
 }
 .logo{
   height:9vh;
@@ -62,7 +122,7 @@ margin:10px;
 color:whitesmoke;
 background-color: rgb(32, 30, 30);
 border-radius: 15px 15px 15px 15px;
-box-shadow: 1px 1px 1px 1px;
+box-shadow: 0.8px 0.8px 0.8px 0.8px;
 text-align: center;
 }
 .dropdownWrap{
@@ -75,9 +135,7 @@ justify-content:end;
 .dropdown {
   position: relative;
 }
-.dropBtn{
-  display:flex;
-}
+
 .menu {
   position: absolute;
   list-style-type: none;
