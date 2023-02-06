@@ -1,11 +1,11 @@
-import {useNavigate} from 'react-router-dom';
-import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-const RegisterForm = ({signUp}) => {
-  
-	const initialState = { username: "", password: ""}
+const RegisterForm = ({ signUp }) => {
+
+  const initialState = { username: "", password: "" }
   const [input, setInput] = useState(initialState)
-	const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -16,7 +16,7 @@ const RegisterForm = ({signUp}) => {
     } else {
       navigate("/auth")
     }
-		setInput(initialState);
+    setInput(initialState);
   };
 
   const handleChange = (e) => {
@@ -24,30 +24,36 @@ const RegisterForm = ({signUp}) => {
   };
 
   return (
-    <>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Name: </label>
-        <input
-          id="username"
-          name="username"
-          value={input.username}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <label htmlFor="password">Password: </label>
-        <input
-          id="password"
-          name="password"
-          value={input.password}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <input type="submit" value="Sign Up" />
-      </form>
-    </>
+    <div className='center'>
+      <div className='register' style={{ border: '2px solid black' }}>
+        <h1>Register</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username"> </label>
+          <input
+            id="username"
+            name="username"
+            placeholder='Username'
+            value={input.username}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
+          <label htmlFor="password"> </label>
+          <input
+            id="password"
+            placeholder='Password'
+            name="password"
+            value={input.password}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
+          <div className='submitWrap'>
+            <input type="submit" value="Sign Up" />
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 export default RegisterForm

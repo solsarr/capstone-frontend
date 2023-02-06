@@ -1,11 +1,11 @@
-import {useNavigate} from 'react-router-dom';
-import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-const LoginForm = ({signIn}) => {
-  
-	const initialState = { username: "", password: ""}
+const LoginForm = ({ signIn }) => {
+
+  const initialState = { username: "", password: "" }
   const [input, setInput] = useState(initialState)
-	const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -16,7 +16,7 @@ const LoginForm = ({signIn}) => {
     } else {
       navigate("/auth")
     }
-		setInput(initialState);
+    setInput(initialState);
   };
 
   const handleChange = (e) => {
@@ -24,30 +24,37 @@ const LoginForm = ({signIn}) => {
   };
 
   return (
-    <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Name: </label>
-        <input
-          id="username"
-          name="username"
-          value={input.username}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <label htmlFor="password">Password: </label>
-        <input
-          id="password"
-          name="password"
-          value={input.password}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <input type="submit" value="Login" />
-      </form>
-    </>
+    <div className='center'>
+      <div className='register' style={{ border: '2px solid black' }}>
+
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username"></label>
+          <input
+            id="username"
+            name="username"
+            placeholder='Username'
+            value={input.username}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
+          <label htmlFor="password"></label>
+          <input
+            id="password"
+            name="password"
+            placeholder='Password'
+            value={input.password}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
+          <div className='submitWrap'>
+            <input type="submit" value="Login" />
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 

@@ -17,52 +17,44 @@ import Thriller from './components/genres/Thriller';
 import Mystery from './components/genres/Mystery';
 import './App.css';
 
-
 function App() {
   const { Provider: UserInfo } = UserContext
-  // we are using a combination of object destructuring and aliasing; 
-  // this allows us to rename the React Context Provider to something more descriptive
-  // example: UserInfo
-
-  console.log(UserInfo)
-
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [currentUser, setCurrentUser] = useState(null)  
-  
+  const [currentUser, setCurrentUser] = useState(null)
+
   return (
 
     <div className="App">
-       <UserInfo value={{
-                isAuthenticated,
-                setAuth: setIsAuthenticated,
-                user: currentUser,
-                setUser:
-                    setCurrentUser
-								
-            }}
-            >
-     <Header />
-     <Routes>
-    <Route path='/' element={<Home />} />
-    <Route path='/recommend' element={<Create />} />
-    <Route  path='/crime' element={<Crime />}/>
-    <Route path='/action' element={<Action />}/>
-    <Route path='/auth' element={<Auth />}/>
-    <Route path='/profile' element={<Profile />}/>
-    <Route path='/post/:id' element={<Post />}/>
-    <Route path='/comedy' element={<Comedy />}/>
-    <Route path='/horror' element={<Horror />}/>
-    <Route path='/fantasy' element={<Fantasy />}/>
-    <Route path='/sci-fi' element={<SciFi />}/>
-    <Route path='/thriller' element={<Thriller />}/>
-    <Route path='/mystery' element={<Mystery />}/>
+      <UserInfo value={{
+        isAuthenticated,
+        setAuth: setIsAuthenticated,
+        user: currentUser,
+        setUser:
+          setCurrentUser
+      }}
+      >
+        <Header />
+        <Routes>
 
-     </Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/recommend' element={<Create />} />
+          <Route path='/crime' element={<Crime />} />
+          <Route path='/action' element={<Action />} />
+          <Route path='/auth' element={<Auth />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/post/:id' element={<Post />} />
+          <Route path='/comedy' element={<Comedy />} />
+          <Route path='/horror' element={<Horror />} />
+          <Route path='/fantasy' element={<Fantasy />} />
+          <Route path='/sci-fi' element={<SciFi />} />
+          <Route path='/thriller' element={<Thriller />} />
+          <Route path='/mystery' element={<Mystery />} />
 
-            </UserInfo>
-            {/* /// */}
+        </Routes>
+
+      </UserInfo>
     </div>
   );
 }
-  
+
 export default App;

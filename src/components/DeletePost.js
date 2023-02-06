@@ -2,13 +2,12 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import '../App.css';
-import { getUserToken, getUser } from '../utils/authToken';
+import { getUser } from '../utils/authToken';
 
 
 export default function DeleteImage() {
 
     const navigate = useNavigate()
-    const token = getUserToken()
     const user = getUser()
     const { id } = useParams()
 
@@ -22,7 +21,6 @@ export default function DeleteImage() {
         try {
             const response = await fetch(POST_URL)
             const allPosts = await response.json()
-            console.log(allPosts)
             setPost(allPosts)
             setLoad(true)
         } catch (err) {
@@ -41,7 +39,6 @@ export default function DeleteImage() {
             const response = await fetch(POST_URL, requestOptions)
 
             const updatedPost = await response.json()
-            console.log(updatedPost, 'delete route')
             navigate(`/profile`)
         } catch (err) {
             console.log(err)
@@ -50,34 +47,29 @@ export default function DeleteImage() {
 
     useEffect(() => {
         getPost()
-    },[])
+    }, [])
 
     function confirm() {
         setConfirm(true)
     }
-    if (confirmed == true){
+    if (confirmed == true) {
         return (
             <div>
                 <p>Are you sure you want to delete this post?</p>
                 <button onClick={handleDelete}>Yes</button>
                 <button onClick={() => {
-                    setLoad(true); 
+                    setLoad(true);
                     setConfirm(false)
-                    }}>No</button>
+                }}>No</button>
             </div>
         )
-    
-      }
-    //create a form, form should accept changes for the image
-    if (loaded == true && post.owner == user){ 
-
-    return (
-        <>
-            
-            <button onClick={confirm}>DELETE POST</button>
-
-
-        </>
-    )}
+    }
+    if (loaded == true && post.owner == user) {
+        return (
+            <>
+                <button onClick={confirm}>DELETE POST</button>
+            </>
+        )
+    }
 
 }

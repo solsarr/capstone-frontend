@@ -7,9 +7,8 @@ import RegisterForm from '../components/RegisterForm'
 
 const Auth = (currentUser, parsedUser) => {
     const { setAuth, setUser } = useContext(UserContext)
-    // console.log(setAuth, setUser)
-  const BASE_URL = "http://localhost:4000/user/signup"
-		const registerUser = async (data) => {
+    const BASE_URL = "http://localhost:4000/user/signup"
+    const registerUser = async (data) => {
         try {
 
             const configs = {
@@ -19,29 +18,18 @@ const Auth = (currentUser, parsedUser) => {
                     "Content-Type": "application/json",
                 },
             }
-
-            // console.log(data, BASE_URL)
-
             const newUser = await fetch(
                 "http://localhost:4000/user/signup",
                 configs
             )
-            console.log(newUser)
 
             const parsedUser = await newUser.json()
 
             if (parsedUser.token) {
-                // sets local storage
                 setUserToken(parsedUser.token)
-                // put the returned user object in state
                 setUser(parsedUser.user)
                 userSet(parsedUser.user)
-                // adds a boolean cast of the responses isAuthenticated prop
                 setAuth(parsedUser.isLoggedIn)
-
-                // alternative (safer) implementation would be to use jwt decode library - <https://www.npmjs.com/package/jwt-decode>
-                // this would also require reconfiguring our backend so we only send tokens with a signup
-
                 return parsedUser
             } else {
                 throw `Server Error: ${parsedUser.err}`
@@ -54,7 +42,6 @@ const Auth = (currentUser, parsedUser) => {
             return null
         }
     }
-    // we will replace our placeholder jsx with a section container and a RegisterForm component
 
     const loginUser = async (data) => {
         try {
@@ -70,17 +57,12 @@ const Auth = (currentUser, parsedUser) => {
                 configs
             )
             const currentUser = await response.json()
-            console.log(currentUser)
 
             if (currentUser.token) {
-                // sets local storage
                 setUserToken(currentUser.token)
-                // put the returned user object in state
                 setUser(currentUser.user)
-                console.log(currentUser.user)
                 userSet(currentUser.user)
                 setAuth(currentUser.isLoggedIn)
-                console.log(currentUser.token, 'token on login')
                 return currentUser
             } else {
                 throw `Server Error: ${currentUser.statusText}`

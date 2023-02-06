@@ -1,106 +1,126 @@
-body{
+body {
   background-color: rgb(35, 35, 35);
 }
-p{
+
+p {
   text-decoration: none;
 }
 
-.nav{
+.nav {
   border: 1px solid black;
   background-color: cornflowerblue;
   height: 10vh;
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   /* overflow: auto; */
   min-width: 100%;
-  background-color:rgb(109, 8, 29);
-  color:whitesmoke;
+  background-color: rgb(109, 8, 29);
+  color: whitesmoke;
   font-family: 'Poppins', sans-serif;
 }
-.createBtn{
+
+.createBtn {
   font-family: 'Poppins', sans-serif;
-  height:5vh;
-  width:6vw;
+  height: 5vh;
+  width: 6vw;
   font-size: 12px;
 }
-.profileBtn{
+
+.profileBtn {
   font-family: 'Poppins', sans-serif;
-  height:5vh;
-  width:6vw;
+  height: 5vh;
+  width: 6vw;
   font-size: 15px;
 }
-.dropBtn{
+
+.dropBtn {
   font-family: 'Poppins', sans-serif;
-  height:5vh;
-  width:6vw;
+  height: 5vh;
+  width: 6vw;
   font-size: 15px;
 }
-.profileBtn:hover{
+
+.profileBtn:hover {
   height: 5.3vh;
   background-color: rgb(133, 38, 38);
 }
-.createBtn:hover{
-    height: 5.3vh;
-    background-color: rgb(133, 38, 38);
-}
-.dropBtn:hover{
-height: 5.3vh;
-background-color: rgb(133, 38, 38);
-}
-.signOutTxt{
-margin: 10px;
-color:black;
-font-size: 20px;
-}
-.signOutTxt:hover{
-color:whitesmoke;  
-}
-.signOutConfirm{
-margin:15px;
-color: black;
-font-size: 20px;
 
+.createBtn:hover {
+  height: 5.3vh;
+  background-color: rgb(133, 38, 38);
 }
-.signOutConfirm:hover{
-  color:whitesmoke;
-  text-decoration: underline;
+
+.dropBtn:hover {
+  height: 5.3vh;
+  background-color: rgb(133, 38, 38);
 }
-.signOutCancel{
-  margin:15px;
+
+.signOutTxt {
+  margin: 10px;
   color: black;
   font-size: 20px;
 }
-.signOutCancel:hover{
-  color:whitesmoke;
+
+.signOutTxt:hover {
+  color: whitesmoke;
+}
+
+.signOutConfirm {
+  margin: 15px;
+  color: black;
+  font-size: 20px;
+
+}
+
+.signOutConfirm:hover {
+  color: whitesmoke;
   text-decoration: underline;
 }
-.logo{
-  height:9vh;
+
+.signOutCancel {
+  margin: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+.signOutCancel:hover {
+  color: whitesmoke;
+  text-decoration: underline;
+}
+
+.logo {
+  height: 9vh;
   margin: 10px
 }
-.image{
-  max-height:40vh;
+
+.image {
+  max-height: 40vh;
   min-width: 100%;
   min-height: 100%;
 }
-.titleWrap{
+
+.titleWrap {
   text-align: center;
 }
-.genreWrap{
+
+.genreWrap {
   text-align: center;
 }
-.summaryWrap{
+
+.summaryWrap {
   padding-left: 3px;
   padding-right: 1px;
 
 }
-.summary{
+
+.summary {
   text-decoration: none;
 
 }
-.postWrapper{
+
+.postWrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -108,30 +128,42 @@ font-size: 20px;
   align-items: center;
   text-decoration: none;
 }
-.post{
+
+.post {
   /* width: 40vw; */
   max-width: 40vw;
   /* width: 60vw; */
   max-height: 90vh;
   overflow: hidden;
-  display:flex;
-flex-direction: column;
-justify-content: center;
-display: block;
-margin:10px;
-color:whitesmoke;
-background-color: rgb(32, 30, 30);
-border-radius: 15px 15px 15px 15px;
-box-shadow: 0.8px 0.8px 0.8px 0.8px;
-text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  margin: 10px;
+  color: whitesmoke;
+  background-color: rgb(32, 30, 30);
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0.8px 0.8px 0.8px 0.8px;
+  text-align: center;
 }
-.dropdownWrap{
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dropdownWrap {
   margin-left: 50px;
   margin-bottom: 20px;
   display: flex;
-flex-direction: column;
-justify-content:end;
+  flex-direction: column;
+  justify-content: end;
 }
+
 .dropdown {
   position: relative;
 }
@@ -144,14 +176,17 @@ justify-content:end;
   border: 1px solid grey;
   width: 150px;
 }
-.menu > li {
+
+.menu>li {
   margin: 0;
   background-color: white;
 }
-.menu > li:hover {
+
+.menu>li:hover {
   background-color: lightgray;
 }
-.menu > li > button {
+
+.menu>li>button {
   width: 100%;
   height: 100%;
   text-align: left;
@@ -162,4 +197,52 @@ justify-content:end;
   margin: 0;
   font: inherit;
   cursor: pointer;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  background-color: rgb(32, 30, 30);
+  width: 70vw;
+  height: 35vh;
+  margin: 10px;
+  border-radius: 70px 70px 70px 70px;
+
+}
+
+.submitWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .createBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 5vh;
+    width: 7vw;
+    font-size: 8px;
+  }
+
+  .dropBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 5vh;
+    width: 7vw;
+    font-size: 9px;
+  }
+
+  .profileBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 5vh;
+    width: 7vw;
+    font-size: 10px;
+  }
+
+  .post {
+    max-width: 70vw;
+  }
 }

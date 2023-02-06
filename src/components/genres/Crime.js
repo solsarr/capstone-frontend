@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import { useNavigate } from 'react-router-dom'
 
 export default function Crime() {
 
@@ -11,7 +10,6 @@ export default function Crime() {
         try {
             const response = await fetch(URL)
             const allPosts = await response.json()
-            console.log(allPosts)
             setPost(allPosts)
         } catch (err) {
             console.log(err)
@@ -21,14 +19,7 @@ export default function Crime() {
 useEffect(() => { 
     getPost()
 },[]) 
-console.log(post)
 
-
-
-// const isCrime = (post.genre) = post.genre == "Crime"
- 
-// const filter = post.genre.filter(isCrime)
-// console.log(filter)
     return (
   
 <div className='postWrapper'>

@@ -3,24 +3,23 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css'
 
-function Dropdown( ) {
+function Dropdown() {
 
-   const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-   const handleOpen = () => {
-     setOpen(!open);
-   };
-   const handleClick = () => {
-    // do something
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+  const handleClick = () => {
     setOpen(false);
   };
 
 
 
- 
-   return (
+
+  return (
     <div className="dropdown">
-      <button className='dropBtn'onClick={handleOpen}>Genres</button>
+      <button className='dropBtn' onClick={handleOpen}>Genres</button>
       {open ? (
         <ul className="menu">
           <li className="menu-item">
@@ -47,12 +46,12 @@ function Dropdown( ) {
           <li className="menu-item">
             <button onClick={handleClick}><Link to='/thriller'>Thriller</Link></button>
           </li>
-          
+
         </ul>
       ) : null}
     </div>
- 
-   );
+
+  );
 
 }
 export { Dropdown }
