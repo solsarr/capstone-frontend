@@ -1,27 +1,73 @@
-import { useState } from 'react'
-// import { Link } from 'react-router-dom'
-import '../App.css'
-import { getUserToken, getUser } from '../utils/authToken';
-import { useNavigate } from 'react-router-dom';
-// import { UserContext } from '../data';
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { getUser, getUserToken } from "../utils/authToken";
+import '../App.css';
+import DeleteImage from "./DeletePost";
 
-export default function Create(){
-  const token = getUserToken()
-  const user = getUser()
-  const navigate = useNavigate()
-  console.log(user)
-  // const user2 = getUser2()
+
+
+export default function EditImage(){
+
+const user = getUser()
+const token = getUserToken()
+const navigate = useNavigate()
+const {id} = useParams()
+
+const BASE_URL = 'http://localhost:4000'
+const POST_URL = `${BASE_URL}/post/${id}`;
+
+    const [editAppear, setEditAppear] = useState(false)
+    const [btnAppear, setBtnAppear] = useState(true)
+    const [loaded, setLoad] = useState(false)
     const [post, setPost] = useState()
-    // const [genreForm, setGenre] = useState()
     const [newForm, setNewForm] = useState({
         image: "",
         genre: "",
         title: "",
         summary: "",
         owner: user
-      })
+    })
+    const getPost = async (e) => {
+        try {
+            const response = await fetch(POST_URL)
+            const thePost = await response.json()
+            console.log(thePost)
+            setPost(thePost)
+            setLoad(true)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+useEffect(() => {
+    getPost()
+}, [])
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const currentPost = { ...newForm }
+        console.log(currentPost)
+        if (currentPost.genre == "Pick One" || ""){
+            alert("Please pick a genre");
+          } else {
+        try {
+            const requestOptions = {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(currentPost)
+            }
+            const response = await fetch(POST_URL, requestOptions)
 
-      const handleChange = (e) => {
+            const updatedPost = await response.json()
+            console.log(updatedPost)
+            navigate(`/`)
+        } catch (err) {
+            console.log(err)
+        }}
+    }
+    
+    const handleChange = (e) => {
         console.log(newForm)
         const userInput = {...newForm}
         userInput[e.target.name] = e.target.value
@@ -36,47 +82,28 @@ export default function Create(){
         console.log(e.target.value, 'value')
         console.log('onclick working')
       }
-      const URL = `http://localhost:4000/post`
+const appear = () => {
+    setBtnAppear((current) => !current)
+    setEditAppear((current) => !current)
+}
 
-      const handleSubmit = async (e) => {
-        e.preventDefault()
-        const currentPost = { ...newForm }
-        console.log(currentPost.genre)
-        if (currentPost.genre === "Pick One" || '' || null || ""){
-          alert("Please pick a genre")
-        } else {
-        try {
-          const requestOptions = {
-            method: "Post",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization":  `Bearer ${token}`
-            },
-            body: JSON.stringify(currentPost)
-          }
-          console.log(JSON.stringify(currentPost))
-  
-          const response = await fetch(URL, requestOptions)
-          const createPost = await response.json()
-          setPost([post, createPost])
-          setNewForm({
-            image: "",
-            genre: "",
-            title: "",
-            summary: "",
-          })
-          navigate('/')
-        } catch (err) {
-          console.log(err)
-        }
-        }
-      }
- console.log(token)
+
+if (loaded == true && btnAppear == true && post.owner == user){
+    return (
+        <div>
+            <button onClick={appear} className="editBtn">EDIT POST</button>
+        </div>
+    )
+}
+
+      
+if (editAppear == true && loaded == true && post.owner == user){
 return (
     <div>
       {token ? (
     <section className="user-list">
-    <h2>Create Post</h2>
+    <h2>Edit Post</h2>
+    <button onClick={appear} className='appearBtn'>Cancel Edit</button>
     <form onSubmit={handleSubmit}  >
       <div className='imagePost'>
         <label htmlFor='image' className='imageLabel'>
@@ -94,7 +121,7 @@ return (
       <div className='genrePost'>
    <label>
        Genre:
-       <select name='genre'onChange={handleGenre}>  
+       <select name='genre'onChange={handleGenre}>
        <option name='option'value='Pick One'>Pick One:
        </option>
            <option name='genre'value='Action'>Action</option>
@@ -116,7 +143,7 @@ return (
                 type='title'
                 value={newForm.title}
                 name='title'
-                placeholder='title'
+                placeholder={post.title}
                 onChange={handleChange}
                 className='titleInput'
                 />
@@ -129,7 +156,7 @@ return (
                 type='summary'
                 value={newForm.summary}
                 name='summary'
-                placeholder='summary'
+                placeholder=''
                 onChange={handleChange}
                 className='summaryInput'
                 />
@@ -137,14 +164,15 @@ return (
         </div>
         <br />
       <div className='submitButton'>
-        <input type="Submit" value="Create Post" onClick={handleSubmit}
-        className='createPost'
+        <input type="Submit" value="Confirm Edit" onClick={handleSubmit}
+        className='editPost'
         />
         </div>
         </form>
         </section>
         ) : null}
-             <div className='post' style={{border:'3px solid black'}}>
+
+            <div className='post' style={{border:'3px solid black'}}>
     <div className='imageWrap'>
     <img src={newForm.image}
     className='image' alt={newForm.image} />
@@ -159,11 +187,9 @@ return (
     <p className='summary'>{newForm.summary}</p>
     </div>
         </div>
-
-
+        <DeleteImage />
         </div>
-      
 )
-
+      }
 
 }

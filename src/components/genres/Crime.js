@@ -33,9 +33,9 @@ console.log(post)
   
 <div className='postWrapper'>
  
-{post?.filter(posts => posts.genre === "Crime").map(filteredPost => (
+{post?.filter(posts => posts.genre === "Crime").slice(0).reverse().map(filteredPost => (
      <Link key={post._id} to={`/post/${post._id}`} style={{textDecoration: "none", color: "black" }}>
-    <div className='post' style={{border:'1px solid black'}}>
+    <div className='post' style={{border:'3px solid black'}}>
     <div className='imageWrap'>
     <img src={filteredPost.image}
     className='image' alt={filteredPost.image} />

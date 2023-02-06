@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import DeleteImage from './DeletePost';
+import EditImage from './EditPost';
 
 export default function Post(){
 
@@ -29,7 +30,7 @@ console.log(post)
 if (loaded == true){
 return(
     <div className='postWrapper'> 
-<div className='post' style={{border:'1px solid black'}}>
+<div className='post' style={{border:'3px solid black'}}>
                         <div className='imageWrap'>
                         <img src={post.image}
                         className='image' alt={post.image} />
@@ -45,7 +46,7 @@ return(
                         </div>
                     </div>
 
-                    <DeleteImage />
+                    <EditImage />
     </div>
 )}
 

@@ -1,6 +1,6 @@
 
     import { useState, useEffect } from 'react'
-    // import { Link } from 'react-router-dom'
+    import { Link } from 'react-router-dom'
     import '../App.css';
     import { getUserToken, getUser } from '../utils/authToken';
 
@@ -38,11 +38,12 @@ export default function Profile(){
         return( 
         <div>
             <div className='postWrapper'>
+                <h2 style={{color: 'whitesmoke'}}>Your Posts:</h2>
                 {post?.slice(0).reverse().map((post, idx)=> {
                     if (post.owner == user){ 
                         return (
-                            
-                            <div className='post' style={{border:'1px solid black'}}>
+                            <Link key={post._id} to={`/post/${post._id}`} style={{textDecoration: "none", color: "black" }}> 
+                            <div className='post' style={{border:'3px solid black'}}>
                                 <div className='imageWrap'>
                                 <img src={post.image}
                                 className='image' alt={post.image} />
@@ -57,6 +58,7 @@ export default function Profile(){
                                 <p className='summary'>{post.summary}</p>
                                 </div>
                             </div>
+                            </Link>
                         )}
                         
 

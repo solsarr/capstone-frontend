@@ -24,10 +24,9 @@ export default function Header(){
                 <img className='logo' src='https://cdn-icons-png.flaticon.com/512/31/31087.png' alt='logo'/> 
             </Link>
             <Link to='/recommend'>
-            <h3>test</h3>
+            <button>Create a Post!</button>
             </Link>
-            <Link to='/auth'>auth</Link>
-            <Link to='/profile'>profile</Link>
+            <Link to='/profile'><button>Profile</button></Link>
 
         <div className='dropDownWrap'><Dropdown /></div>
         <div className='signOutWrap'><SignOut /></div>

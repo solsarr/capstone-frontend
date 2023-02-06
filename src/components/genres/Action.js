@@ -35,8 +35,8 @@ console.log(post)
   
 <div className='postWrapper'>
  
-{post?.filter(posts => posts.genre === "Action").map(filteredPost => (
-    <div className='post' style={{border:'1px solid black'}}>
+{post?.filter(posts => posts.genre === "Action").slice(0).reverse().map(filteredPost => (
+    <div className='post' style={{border:'3px solid black'}}>
     <div className='imageWrap'>
     <img src={filteredPost.image}
     className='image' alt={filteredPost.image} />

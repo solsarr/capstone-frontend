@@ -49,7 +49,7 @@ console.log(token, 'user token on home')
             {post?.slice(0).reverse().map((post, idx)=> {
                 return (
                     <Link key={post._id} to={`/post/${post._id}`} style={{textDecoration: "none", color: "black" }}>
-                    <div className='post' style={{border:'1px solid black'}}>
+                    <div className='post' style={{border:'3px solid black'}}>
                         <div className='imageWrap'>
                         <img src={post.image}
                         className='image' alt={post.image} />

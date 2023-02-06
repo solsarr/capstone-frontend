@@ -73,7 +73,7 @@ export default function DeleteImage() {
 
     return (
         <>
-            <h6>Delete</h6>
+            
             <button onClick={confirm}>DELETE POST</button>
 
 
