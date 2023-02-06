@@ -33,6 +33,11 @@ p{
 .summaryWrap{
   padding-left: 3px;
   padding-right: 1px;
+
+}
+.summary{
+  text-decoration: none;
+
 }
 .postWrapper{
   display: flex;

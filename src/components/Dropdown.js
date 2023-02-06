@@ -27,25 +27,33 @@ function Dropdown( ) {
             <button onClick={handleClick}><Link to='/action'>Action</Link></button>
           </li>
           <li className="menu-item">
+            <button onClick={handleClick}><Link to='/comedy'>Comedy</Link></button>
+          </li>
+          <li className="menu-item">
             <button onClick={handleClick}><Link to='/crime'>Crime</Link></button>
           </li>
+          <li className="menu-item">
+            <button onClick={handleClick}><Link to='/fantasy'>Fantasy</Link></button>
+          </li>
+          <li className="menu-item">
+            <button onClick={handleClick}><Link to='/horror'>Horror</Link></button>
+          </li>
+          <li className="menu-item">
+            <button onClick={handleClick}><Link to='/mystery'>Mystery</Link></button>
+          </li>
+          <li className="menu-item">
+            <button onClick={handleClick}><Link to='/sci-fi'>Sci-Fi</Link></button>
+          </li>
+          <li className="menu-item">
+            <button onClick={handleClick}><Link to='/thriller'>Thriller</Link></button>
+          </li>
+          
         </ul>
       ) : null}
       {/* {open ? <div>Is Open</div> : <div>Is Closed</div>} */}
     </div>
 
    );
- 
-//     return(
-//         <div className='dropdownWrap'>
-//         <select className="selectList" id="selectList">
-//     <option value="option 1">Genre</option>
-//     <option value="option 2"> Crime</option>
-// </select> 
-// </div>
-//     )
-
-
 
 }
 export { Dropdown }

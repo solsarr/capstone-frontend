@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
+import DeleteImage from './DeletePost';
 
 export default function Post(){
 
@@ -44,6 +45,7 @@ return(
                         </div>
                     </div>
 
+                    <DeleteImage />
     </div>
 )}
 

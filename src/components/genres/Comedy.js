@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // import { useNavigate } from 'react-router-dom'
 
-export default function Crime() {
+export default function Comedy() {
 
     const [post, setPost] = useState()
 
@@ -33,7 +33,7 @@ console.log(post)
   
 <div className='postWrapper'>
  
-{post?.filter(posts => posts.genre === "Crime").map(filteredPost => (
+{post?.filter(posts => posts.genre === "Comedy").map(filteredPost => (
      <Link key={post._id} to={`/post/${post._id}`} style={{textDecoration: "none", color: "black" }}>
     <div className='post' style={{border:'1px solid black'}}>
     <div className='imageWrap'>
@@ -49,9 +49,8 @@ console.log(post)
     <div className='summaryWrap'>
     <p className='summary'>{filteredPost.summary}</p>
     </div>
-
 </div>
-</Link>
+    </Link>
 ))}
 </div>
     )    

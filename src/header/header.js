@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import { Dropdown } from '../components/Dropdown'
+import SignOut from '../components/SignOut'
 
 export default function Header(){
 
@@ -28,8 +29,10 @@ export default function Header(){
             <Link to='/auth'>auth</Link>
             <Link to='/profile'>profile</Link>
 
-         <Dropdown />
+        <div className='dropDownWrap'><Dropdown /></div>
+        <div className='signOutWrap'><SignOut /></div>
         </nav>
+
     </header>
     )  
 }

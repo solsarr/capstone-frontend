@@ -9,7 +9,12 @@ import Profile from './components/Profile'
 import { UserContext } from './data/userContext'
 import { useState, useEffect, useContext } from 'react'
 import Post from './components/PostPreview';
-
+import Comedy from './components/genres/Comedy';
+import Horror from './components/genres/Horror';
+import Fantasy from './components/genres/Fantasy';
+import SciFi from './components/genres/SciFi';
+import Thriller from './components/genres/Thriller';
+import Mystery from './components/genres/Mystery';
 import './App.css';
 
 
@@ -45,6 +50,12 @@ function App() {
     <Route path='/auth' element={<Auth />}/>
     <Route path='/profile' element={<Profile />}/>
     <Route path='/post/:id' element={<Post />}/>
+    <Route path='/comedy' element={<Comedy />}/>
+    <Route path='/horror' element={<Horror />}/>
+    <Route path='/fantasy' element={<Fantasy />}/>
+    <Route path='/sci-fi' element={<SciFi />}/>
+    <Route path='/thriller' element={<Thriller />}/>
+    <Route path='/mystery' element={<Mystery />}/>
 
      </Routes>
 
