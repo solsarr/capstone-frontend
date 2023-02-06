@@ -44,7 +44,7 @@ console.log(token, 'user token on home')
 
     return( 
     <div>
-        {token ? (
+        
         <div className='postWrapper'>
             {post?.slice(0).reverse().map((post, idx)=> {
                 return (
@@ -72,7 +72,7 @@ console.log(token, 'user token on home')
     
     
         </div>
-        ): null}
+        
         </div>
     
     

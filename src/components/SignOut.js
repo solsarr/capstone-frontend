@@ -29,7 +29,9 @@ navigate('/auth')
 useEffect(() => {
     check()
 })
-
+const logIn = () => {
+    navigate('/auth')
+    }
 if (confirm == true){
     return (
         <div className='signOut'>
@@ -38,12 +40,18 @@ if (confirm == true){
     </div>
     )
 }
-
+if (signOut == false){
+    return (
+        <div className='signOut'>
+            <p className='signOutTxt'onClick={logIn}>Sign In</p>
+        </div>
+    )
+}
 
 if (signOut == true){
 return (
     <div className='signOut'>
-        <p className='signOutTxt'onClick={handleClick}>Sign out?</p>
+        <p className='signOutTxt'onClick={handleClick}>Sign out</p>
     </div>
 )
 }
