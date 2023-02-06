@@ -248,3 +248,31 @@ input{
     max-width: 70vw;
   }
 }
+@media screen and (max-width: 500px) {
+
+  .createBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 5vh;
+    width: 15vw;
+    font-size: 8px;
+  }
+
+  .dropBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 5vh;
+    width: 15vw;
+    font-size: 9px;
+  }
+
+  .profileBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 5vh;
+    width: 15vw;
+    font-size: 10px;
+  }
+
+  .post {
+    max-width: 90vw;
+  }
+
+}
