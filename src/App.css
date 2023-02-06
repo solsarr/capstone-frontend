@@ -22,7 +22,10 @@ input{
   color: whitesmoke;
   font-family: 'Poppins', sans-serif;
 }
-
+.greeting{
+  position: absolute;
+  left:10vw;
+}
 .createBtn {
   font-family: 'Poppins', sans-serif;
   height: 5vh;

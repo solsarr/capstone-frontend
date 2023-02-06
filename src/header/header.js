@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import { Dropdown } from '../components/Dropdown'
 import SignOut from '../components/SignOut'
-
+import { getUser } from '../utils/authToken'
 
 export default function Header() {
-
+const user = getUser()
     return (
         <header>
             <nav className='nav'>
@@ -18,6 +18,7 @@ export default function Header() {
                 <Link to='/profile'><button className='profileBtn'>Profile</button></Link>
 
                 <div className='dropDownWrap'><Dropdown /></div>
+                <h5 className='greeting'>Hello {user}.</h5>
                 <div className='signOutWrap'><SignOut /></div>
             </nav>
 
