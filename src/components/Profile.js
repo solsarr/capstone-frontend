@@ -27,6 +27,7 @@ export default function Profile() {
         getPost()
     }, [])
 
+    if (token){
     return (
         <div>
             <div className='postWrapper'>
@@ -64,6 +65,6 @@ export default function Profile() {
 
 
     )
-
+            }
 
 }
