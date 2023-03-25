@@ -8,7 +8,7 @@ export default function Post() {
 
     const [post, setPost] = useState()
     const [loaded, setLoad] = useState(false)
-    const BASE_URL = 'http://localhost:4000'
+    const BASE_URL = 'https://film-buddy.herokuapp.com:4000'
     const POST_URL = `${BASE_URL}/post/${id}`;
     const getPost = async (e) => {
         try {

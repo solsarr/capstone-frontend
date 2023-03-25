@@ -7,7 +7,7 @@ import RegisterForm from '../components/RegisterForm'
 
 const Auth = (currentUser, parsedUser) => {
     const { setAuth, setUser } = useContext(UserContext)
-    const BASE_URL = "http://localhost:4000/user/signup"
+    const BASE_URL = "https://film-buddy.herokuapp.com:4000/user/signup"
     const registerUser = async (data) => {
         try {
 
@@ -19,7 +19,7 @@ const Auth = (currentUser, parsedUser) => {
                 },
             }
             const newUser = await fetch(
-                "http://localhost:4000/user/signup",
+                "https://film-buddy.herokuapp.com:4000/user/signup",
                 configs
             )
 
@@ -53,7 +53,7 @@ const Auth = (currentUser, parsedUser) => {
                 },
             }
             const response = await fetch(
-                "http://localhost:4000/user/login",
+                "https://film-buddy.herokuapp.com:4000/user/login",
                 configs
             )
             const currentUser = await response.json()
