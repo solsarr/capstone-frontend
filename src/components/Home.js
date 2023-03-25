@@ -7,13 +7,16 @@ const Home = (props) => {
 
     const [post, setPost] = useState()
 
-    const BASE_URL = 'https://film-buddy.herokuapp.com:4000'
+    const BASE_URL = 'https://film-buddy.herokuapp.com'
     const POST_URL = `${BASE_URL}/post`;
-
+ 
     const getPost = async () => {
         try {
+            console.log('fetching post')
             const response = await fetch(POST_URL)
+            console.log('response -->', response);
             const allPosts = await response.json()
+            console.log('all posts -->', allPosts);
             setPost(allPosts)
         } catch (err) {
             console.log(err)

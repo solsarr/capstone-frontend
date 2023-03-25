@@ -27,7 +27,7 @@ export default function Create() {
     input[e.target.name] = e.target.value
     setNewForm(input)
   }
-  const URL = `https://film-buddy.herokuapp.com:4000/post`
+  const URL = `https://film-buddy.herokuapp.com/post`
 
   const handleSubmit = async (e) => {
     e.preventDefault()

@@ -11,7 +11,7 @@ export default function Profile() {
     const user = getUser()
     const [post, setPost] = useState()
 
-    const BASE_URL = 'https://film-buddy.herokuapp.com:4000'
+    const BASE_URL = 'https://film-buddy.herokuapp.com'
     const POST_URL = `${BASE_URL}/post`;
     const getPost = async () => {
         try {

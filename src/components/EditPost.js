@@ -14,7 +14,7 @@ export default function EditImage() {
     const navigate = useNavigate()
     const { id } = useParams()
 
-    const BASE_URL = 'https://film-buddy.herokuapp.com:4000'
+    const BASE_URL = 'https://film-buddy.herokuapp.com'
     const POST_URL = `${BASE_URL}/post/${id}`;
 
     const [editAppear, setEditAppear] = useState(false)

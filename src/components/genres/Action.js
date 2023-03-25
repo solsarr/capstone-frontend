@@ -5,7 +5,7 @@ export default function Action() {
 
     const [post, setPost] = useState()
 
-    const URL = `https://film-buddy.herokuapp.com:4000/post`
+    const URL = `https://film-buddy.herokuapp.com/post`
     const getPost = async () => {
         try {
             const response = await fetch(URL)
